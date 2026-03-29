@@ -1,0 +1,20 @@
+*design* DebussyLib (btIdent Verdi_T-2022.06-SP2)
+Command arguments:
+    +define+verilog
+    -f ../script/filelist.f
+        ../bench/tb_single_port.v
+        ../rtl/single_port.v
+
+Highest level modules:
+tb_single_port
+
+
+*Error* failed to find port 'en' for instance 'inst_single_port'
+"../bench/tb_single_port.v", 69: 
+
+*Error* failed to find port 'we' for instance 'inst_single_port'
+"../bench/tb_single_port.v", 70: 
+
+*Error* failed to find port 'addr' for instance 'inst_single_port'
+"../bench/tb_single_port.v", 71: 
+Total	3 error(s),   0 warning(s)
