@@ -1,2 +1,30 @@
 # single_port_ram
-Parameterized Synchronous Single-Port RAM in Verilog for FPGA/ASIC
+Verilog 实现的**参数化单端口同步RAM (Single-Port Synchronous RAM)** 模块，是FPGA/ASIC数字设计中通用的片上存储IP核。
+
+## 核心功能
+- 单时钟同步读写操作
+- 异步低电平复位，上电自动初始化RAM为全0
+- 支持独立配置存储深度、数据位宽
+- 标准单端口RAM控制逻辑，兼容主流FPGA器件
+
+## 参数配置
+| 参数名   | 功能               | 默认值 |
+| -------- | ------------------ | ------ |
+| DEPTH    | 地址位宽（深度=2^DEPTH） | 6      |
+| WIDTH    | 数据位宽           | 16     |
+
+## 端口定义
+| 端口名   | 方向   | 功能                 |
+| -------- | ------ | -------------------- |
+| clk      | 输入   | 同步工作时钟         |
+| rstn     | 输入   | 异步低电平复位       |
+| ena      | 输入   | RAM总使能信号        |
+| wea      | 输入   | 写使能（高写低读）|
+| addra    | 输入   | 读写地址总线         |
+| din      | 输入   | 写数据总线           |
+| dout     | 输出   | 读数据总线           |
+
+## 设计特点
+1. 纯Verilog RTL实现，无厂商依赖
+2. 时序规范，可直接综合映射为FPGA Block RAM
+3. 代码简洁易读，适配教学、工程开发场景
